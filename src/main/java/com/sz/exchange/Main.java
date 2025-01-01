@@ -17,7 +17,7 @@ public class Main {
         log(tradeList2);
         List<Trade> tradeList3 = orderBook.process(new Order(100L, 255L, "1003", OrderConstant.BUY));
         log(tradeList3);
-        List<Trade> tradeList4 = orderBook.process(new Order(150L, 257L, "1003", OrderConstant.BUY));
+        List<Trade> tradeList4 = orderBook.process(new Order(150L, 257L, "1004", OrderConstant.BUY));
         log(tradeList4);
 
     }
