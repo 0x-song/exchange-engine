@@ -17,5 +17,9 @@ public class Order {
 
     private String id;
 
+    /**
+     * 0代表卖sell
+     * 1代表买buy
+     */
     private Integer side;
 }

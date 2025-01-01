@@ -1,6 +1,8 @@
 package com.sz.exchange;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @Author
@@ -15,6 +17,8 @@ import lombok.Data;
  *      因为他们的订单不会立即执行，而是等待其他用户的订单与之匹配。通过挂单，Maker为交易所创造了深度（流动性）‌
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Trade {
 
     private String takerOrderId;
