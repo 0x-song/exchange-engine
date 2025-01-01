@@ -1,6 +1,8 @@
 package com.sz.exchange;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @Author
@@ -9,6 +11,8 @@ import lombok.Data;
  * 委托单：限价委托单、市价委托单、止损委托单
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Order {
 
     private Long amount;

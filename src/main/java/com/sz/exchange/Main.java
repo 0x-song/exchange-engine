@@ -1,5 +1,7 @@
 package com.sz.exchange;
 
+import java.util.List;
+
 /**
  * @Author
  * @Date 2024-12-30 21:28
@@ -8,14 +10,25 @@ package com.sz.exchange;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        OrderBook orderBook = new OrderBook();
+        List<Trade> tradeList = orderBook.process(new Order(100L, 256L, "1001", OrderConstant.SELL));
+        log(tradeList);
+        List<Trade> tradeList2 = orderBook.process(new Order(100L, 256L, "1002", OrderConstant.SELL));
+        log(tradeList2);
+        List<Trade> tradeList3 = orderBook.process(new Order(100L, 255L, "1003", OrderConstant.BUY));
+        log(tradeList3);
+        List<Trade> tradeList4 = orderBook.process(new Order(150L, 257L, "1003", OrderConstant.BUY));
+        log(tradeList4);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+    }
+
+    private static void log(List<Trade> tradeList) {
+        if(tradeList.isEmpty()){
+            System.out.println("暂无订单成交");
+        }else {
+            for (Trade trade : tradeList) {
+                System.out.println(trade);
+            }
         }
     }
 }
